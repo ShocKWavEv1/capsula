@@ -6,9 +6,9 @@ const Layout = ({children}) => {
 
     return(
         <Box w="100%" h="auto" position="relative" zIndex={0}>
-            <Flex as="header" position="fixed" w="100%" padding={"0 4%"} zIndex={2}>
+            <Box padding={["5% 4% 0 4%", "5% 4% 0 4%", "3% 4% 0 4%", "3% 4% 0 4%"]} position="fixed" w="100%"  zIndex={2}>
                 <Navigation />
-            </Flex>
+            </Box>
             <Box w="100%" bg="blue" h="auto">
                 {children}
             </Box>

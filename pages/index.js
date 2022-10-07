@@ -13,12 +13,12 @@ export default function Home() {
         objectFit='cover'
         sizes='100vw'
       />
-      <Box w="100%" h="100vh" p="0 2%" position="relative" zIndex={1} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
+      <Box w="100%" h="100vh" position="relative" zIndex={1} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
         <Box w="100%" mt="2rem" h="100%" display="flex" alignItems="center" justifyContent="center" flexDir="column" >
-          <Heading align="center" color="white" fontSize={["6xl", "6xl", "7xl", "7xl"]} >
+          <Heading align="center" color="white" fontSize={["5xl", "6xl", "7xl", "7xl"]} >
             Cápsula en construcción
           </Heading>
-          <Text align="center" color="white" fontSize={["lg", "lg", "xl", "xl"]} >
+          <Text align="center" color="white" fontSize={["md", "lg", "xl", "xl"]} >
             Sabemos que juntos llegaremos lejos
           </Text>
         </Box>
