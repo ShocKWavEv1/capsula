@@ -16,7 +16,7 @@ const Navigation = () => {
                                 Trayectoria
                             </Text>
                             <Text cursor="pointer" color="white" fontSize={["xs", "sm", "sm", "sm"]} _hover={{ opacity: 0.7 }}>
-                                Transparencia
+                                Transparencia 
                             </Text>
                         </Hide>
                         <Button size="sm" shadow="2xl" borderRadius="5em" >
