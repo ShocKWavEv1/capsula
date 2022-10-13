@@ -2,5 +2,9 @@
     "home": {
         "title": "Cápsula en construcción",
         "subtitle": "Sabemos que juntos llegaremos lejos"
+    },
+    "footer": {
+        "spanish": "español",
+        "english": "ingles"
     }
 }

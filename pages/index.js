@@ -1,9 +1,14 @@
 import { Box, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import bg from "../assets/bg/ffflux.svg";
+import Capsula from '../src/components/Capsula';
+import FAQ from '../src/components/FAQs';
 import Footer from '../src/components/Footer';
+import Hero from '../src/components/Hero';
+import Nosotros from '../src/components/Nostros';
+import WhyUs from '../src/components/WhyUs';
 
-export default function Home() {
+export default function Home({dictionary}) {
   return (
     <Box w="100%" h="100vh" zIndex={0} >
       <Image
@@ -11,19 +16,22 @@ export default function Home() {
         alt={bg}
         layout='fill'
         objectFit='cover'
-        sizes='100vw'
       />
-      <Box w="100%" h="100vh" position="relative" zIndex={1} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
-        <Box w="100%" mt="2rem" h="100%" display="flex" alignItems="center" justifyContent="center" flexDir="column" >
-          <Heading align="center" color="white" fontSize={["5xl", "6xl", "7xl", "7xl"]} >
-            Cápsula en construcción
-          </Heading>
-          <Text align="center" color="white" fontSize={["md", "lg", "xl", "xl"]} >
-            Sabemos que juntos llegaremos lejos
-          </Text>
-        </Box>
-        <Footer />
-      </Box>
+      <Hero dictionary={dictionary} />
+      <Capsula dictionary={dictionary} />
+      <Nosotros dictionary={dictionary} />
+      <WhyUs dictionary={dictionary} />
+      <FAQ dictionary={dictionary} />
+      <Footer dictionary={dictionary} />
     </Box>
   )
+}
+
+export async function getStaticProps({locale}) {
+  const response = await import(`../lang/${locale}.json`);
+  return {
+    props: {
+      dictionary: response.default
+    }
+  }
 }

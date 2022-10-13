@@ -2,5 +2,9 @@
     "home": {
         "title": "Cápsula under construction",
         "subtitle": "We know together, We can reach anything"
+    },
+    "footer": {
+        "spanish": "spanish",
+        "english": "english"
     }
 }
