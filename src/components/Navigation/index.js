@@ -29,21 +29,21 @@ const Navigation = () => {
                         height="1"
                         display="flex"
                     />
-                    <Heading pl="7px" cursor="pointer" onClick={() => router.push("/")} color="white" fontSize={["lg", "lg", "xl", "2xl"]} fontWeight="600" _hover={{ opacity: 0.7 }} >
+                    <Heading pl="7px" color="white"  cursor="pointer" onClick={() => router.push("/")} fontSize={["lg", "lg", "xl", "2xl"]} fontWeight="600" _hover={{ opacity: 0.7 }} >
                         cápsula
                     </Heading>
                 </GridItem>
                 <GridItem w="100%" display="flex" alignItems="center" justifyContent="flex-end" flexDir="row" colSpan={[8, 8, 8, 6]} h='100%'>
                     <Stack direction='row' spacing={4} align='center'>
                         <Hide below="sm" >
-                            <Text onClick={() => router.push("/trayectoria")} cursor="pointer" color="white" fontSize={["xs", "sm", "sm", "sm"]} _hover={{ opacity: 0.7 }}>
+                            <Text color="white"  onClick={() => router.push("/trayectoria")} cursor="pointer" fontSize={["xs", "sm", "sm", "sm"]} _hover={{ opacity: 0.7 }}>
                                 Trayectoria
                             </Text>
-                            <Text onClick={() => router.push("/transparencia")} cursor="pointer" color="white" fontSize={["xs", "sm", "sm", "sm"]} _hover={{ opacity: 0.7 }}>
+                            <Text color="white"  onClick={() => router.push("/transparencia")} cursor="pointer" fontSize={["xs", "sm", "sm", "sm"]} _hover={{ opacity: 0.7 }}>
                                 Transparencia 
                             </Text>
                         </Hide>
-                        <Button size="sm" shadow="2xl" borderRadius="5em" >
+                        <Button size="sm" shadow="2xl" borderRadius="5em">
                             <Text cursor="pointer" fontSize={["xs", "sm", "sm", "sm"]}>
                                 Donaciones
                             </Text>

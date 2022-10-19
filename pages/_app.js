@@ -15,24 +15,28 @@ const variants = {
 }
 
 function MyApp({ Component, pageProps, router }) {
-  return (
-    <ChakraProvider theme={theme}>
-      <Meta title={"CÁPSULA | Sabemos que juntos llegaremos lejos"} />
-      <Layout>
-        <motion.main
-          key={router.route}
-          variants={variants} // Pass the variant object into Framer Motion 
-          initial="hidden" // Set the initial state to variants.hidden
-          animate="enter" // Animated state to variants.enter
-          exit="exit" // Exit state (used later) to variants.exit
-          transition={{ type: 'linear' }} // Set the transition to linear
-          className=""
-        >
-            <Component {...pageProps}  />
-        </motion.main>
-      </Layout>        
-    </ChakraProvider>
-  )
+  if (typeof window === 'undefined') {
+    return <></>;
+  } else {
+    return (
+      <ChakraProvider theme={theme}>
+        <Meta title={"CÁPSULA | Sabemos que juntos llegaremos lejos"} />
+        <Layout>
+          <motion.main
+            key={router.route}
+            variants={variants} // Pass the variant object into Framer Motion 
+            initial="hidden" // Set the initial state to variants.hidden
+            animate="enter" // Animated state to variants.enter
+            exit="exit" // Exit state (used later) to variants.exit
+            transition={{ type: 'linear' }} // Set the transition to linear
+            className=""
+          >
+              <Component {...pageProps}  />
+          </motion.main>
+        </Layout>        
+      </ChakraProvider>
+    )
+  }
 }
 
 export default MyApp

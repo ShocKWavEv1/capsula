@@ -35,12 +35,12 @@ const Footer = ({ dictionary }) => {
             <Menu>
                 {renderMenuButton()}
                 <MenuList bg="brand.primary.500" borderColor="brand.primary.500" minWidth="50px" py="0px" >
-                    <MenuItem onClick={() => onChange("es")} _hover={{ backgroundColor: "brand.primary.400" }} _focus={{ backgroundColor: "brand.primary.400" }} >
+                    <MenuItem onClick={() => onChange("es")} _hover={{ backgroundColor: "brand.accent" }} _focus={{ backgroundColor: "brand.primary.400" }} >
                         <Text color="white" fontSize={["sm", "sm", "sm", "sm"]}>
                             {dictionary.footer.spanish}
                         </Text>
                     </MenuItem>
-                    <MenuItem onClick={() => onChange("en")} _hover={{ backgroundColor: "brand.primary.400" }} _focus={{ backgroundColor: "brand.primary.400" }} >
+                    <MenuItem onClick={() => onChange("en")} _hover={{ backgroundColor: "brand.accent" }} _focus={{ backgroundColor: "brand.primary.400" }} >
                         <Text color="white" fontSize={["sm", "sm", "sm", "sm"]}>
                             {dictionary.footer.english}
                         </Text>
