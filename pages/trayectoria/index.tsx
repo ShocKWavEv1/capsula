@@ -10,7 +10,7 @@ import {
 import { Box, Button, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
-import { PROYECTOS } from './proyectos.js';
+import {PROYECTOS} from './proyectos.js';
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
