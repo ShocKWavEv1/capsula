@@ -81,48 +81,53 @@ const Trayectoria = ({ dictionary }) => {
 
   const renderSingleCard = (item, i) => {
     return(
-      <Box p="1rem" bg='white' boxShadow="lg" borderRadius="8px" display="flex" alignItems="center" justifyContent="center" flexDirection="column" key={i} >
-        <Box
-          w='100%'
-          h={["350px", "350px", "250px", "250px"]}
-          borderTopRadius='lg'
-          boxShadow="2xl"
-          p='1rem'
-          pos='relative'
-          bgImage={`url(${item?.img.src})`}
-          bgSize='cover'
-          _before={{
-            content: '""',
-            bgColor: `brand.primary.800`,
-            bgSize: 'cover',
-            pos: 'absolute',
-            borderTopRadius: 'lg',
-            top: 0,
-            right: 0,
-            left: 0,
-            bottom: 0,
-            opacity: 0.5
-          }}
-        />
-        <Box pt="2rem" bg="white" display="flex" alignItems="center" justifyContent="center" flexDir="column" >
-          <Stack direction='column' spacing={4} align='left'>
-            <Heading color="brand.primary.800" fontSize={"xs"} >
-              {item.date}
-            </Heading>
-            <Heading color="brand.primary.800" fontSize={"3xl"} >
-              {item.title}
-            </Heading>
-            <Text fontSize={"sm"} color="brand.primary.800" >
-              {item.desc}
-            </Text>
-            <Button mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="5em">
-            <Text cursor="pointer" p="0rem 1rem" fontSize={["sm", "sm", "sm", "sm"]}>
-              Leer mas
-            </Text>
-          </Button>
-          </Stack>
+      <motion.div
+        whileHover={{ scale: [null, 1.05, 1.05] }}
+        transition={{ duration: 0.3 }}
+      >
+        <Box p="1rem" bg='white' boxShadow="xl" borderRadius="8px" display="flex" alignItems="center" justifyContent="center" flexDirection="column" key={i} >
+          <Box
+            w='100%'
+            h={["350px", "400px", "300px", "250px"]}
+            borderTopRadius='lg'
+            boxShadow="2xl"
+            p='1rem'
+            pos='relative'
+            bgImage={`url(${item?.img.src})`}
+            bgSize='cover'
+            _before={{
+              content: '""',
+              bgColor: `brand.primary.800`,
+              bgSize: 'cover',
+              pos: 'absolute',
+              borderTopRadius: 'lg',
+              top: 0,
+              right: 0,
+              left: 0,
+              bottom: 0,
+              opacity: 0.5
+            }}
+          />
+          <Box pt="2rem" bg="white" display="flex" alignItems="center" justifyContent="center" flexDir="column" >
+            <Stack direction='column' spacing={4} align='left'>
+              <Heading color="brand.primary.800" fontSize={"xs"} >
+                {item.date}
+              </Heading>
+              <Heading color="brand.primary.800" fontSize={"3xl"} >
+                {item.title}
+              </Heading>
+              <Text fontSize={"sm"} color="brand.primary.800" >
+                {item.desc}
+              </Text>
+              <Button mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="5em">
+                <Text cursor="pointer" p="0rem 1rem" fontSize={["sm", "sm", "sm", "sm"]}>
+                  Leer mas
+                </Text>
+              </Button>
+            </Stack>
+          </Box>
         </Box>
-      </Box>
+      </motion.div>
     )
   }
 
