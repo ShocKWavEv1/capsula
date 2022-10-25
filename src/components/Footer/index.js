@@ -23,7 +23,7 @@ const Footer = ({ dictionary }) => {
                 transition='all 0.2s'
                 _focus={{ boxShadow: 'outline' }}
             >
-                <Text color="white" fontSize={["sm", "sm", "sm", "sm"]}>
+                <Text color="brand.primary.800" fontSize={["sm", "sm", "sm", "sm"]}>
                     {router.locale === "es" ? "español" : "english"} <ChevronDownIcon />
                 </Text>
             </MenuButton>
@@ -51,10 +51,10 @@ const Footer = ({ dictionary }) => {
     }
 
     return(
-        <Box w="100%" padding={["0 4% 5% 4%", "0 4% 5% 4%", "0 4% 2% 4%", "0% 4% 2% 4%"]} bg="brand.primary.800">
+        <Box w="100%" padding={["0 4% 5% 4%", "0 4% 5% 4%", "0 4% 2% 4%", "0% 4% 2% 4%"]} bg="white">
             <Grid w="100%" h="100%" templateColumns='repeat(12, 2fr)'>
                 <GridItem w="100%" display="flex" alignItems="flex-start" justifyContent="center" flexDir="column" colSpan={[8, 8, 8, 8]} h='100%'>
-                    <Text color="white" fontSize={["sm", "sm", "sm", "sm"]}>
+                    <Text color="brand.primary.800" fontSize={["sm", "sm", "sm", "sm"]}>
                         cápsula 2022
                     </Text>
                 </GridItem>
