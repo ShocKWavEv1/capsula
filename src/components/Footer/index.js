@@ -58,9 +58,6 @@ const Footer = ({ dictionary }) => {
                         cápsula 2022
                     </Text>
                 </GridItem>
-                <GridItem w="100%" display="flex" alignItems="center" justifyContent="flex-end" flexDir="row" colSpan={[4, 4, 4, 4]} h='100%'>
-                    {renderLangMenu()}
-                </GridItem>
             </Grid>
         </Box>
     )

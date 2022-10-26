@@ -132,7 +132,7 @@ const Trayectoria = ({ dictionary }) => {
   }
 
   return (
-    <Box bg="white">
+    <Box bg="white" padding={["0 4% 5% 4%", "0 4% 5% 4%", "0 4% 2% 4%", "0% 4% 2% 4%"]}>
       <Show above="lg" >
         {PROYECTOS.map((item, i) => (
           <ImageContainer key={i} id={i} title={item.title} date={item.date} desc={item.desc} idx={i} total={PROYECTOS.length} img={item.img} />

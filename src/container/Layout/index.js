@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from '@chakra-ui/react';
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
+import WhatsApp from "../../utils/whatsapp";
 
 const Layout = ({children}) => {
 
@@ -13,6 +14,7 @@ const Layout = ({children}) => {
             <Box w="100%" h="auto">
                 {children}
             </Box>
+            <WhatsApp />
         </Box>
     )
 }
