@@ -3,12 +3,12 @@ import { ALL_FAQS } from "../../utils/data/faqs";
 
 const FAQ = () => {
     return(
-        <Box p={["8rem 4%", "8rem 4%", "8rem 4%", "8% 14rem"]} w="100%" h="auto" bg="white" display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
+        <Box padding={["7rem 4%", "7rem 4%", "7rem 4%", "8rem 14rem"]} w="100%" h="auto" bg="white" display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
             <Box w="100%" h="100%" display="flex" alignItems="center" justifyContent="center" flexDir="column" >
-                <Heading color="brand.primary.800" align="center" fontSize={["5xl", "6xl", "7xl", "6xl"]} >
+                <Heading color="brand.primary.800" align="center" fontSize={["5xl", "5xl", "6xl", "6xl"]} >
                     Preguntas frecuentes
                 </Heading>
-                <Text pt="0.45rem" color="blue.500" align="center" fontSize={["md", "lg", "xl", "xl"]} >
+                <Text pt="0.45rem" color="blue.500" align="center" fontSize={["md", "md", "xl", "xl"]} >
                     Simple, powerful, and useful.
                 </Text>
             </Box>

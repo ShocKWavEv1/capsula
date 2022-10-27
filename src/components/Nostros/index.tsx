@@ -80,9 +80,9 @@ const Nosotros = () => {
     }
 
     return(
-        <Box w="100%" h="auto" bg="white" padding={["0 4% 5% 4%", "0 4% 5% 4%", "0 4% 2% 4%", "8% 4%"]} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
+        <Box w="100%" h="auto" bg="white" padding={["7rem 4%", "7rem 4%", "7rem 4%", "8rem 4%"]} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
             <Box textAlign="center" w="100%" h="auto" display="flex" alignItems="flex-start" justifyContent="center">
-                <Heading color="brand.primary.800" fontSize={["5xl", "6xl", "7xl", "6xl"]} >
+                <Heading color="brand.primary.800" fontSize={["5xl", "5xl", "6xl", "6xl"]} >
                     Lo que dicen nuestr@s Soci@s
                 </Heading>
             </Box>
@@ -124,8 +124,8 @@ const Nosotros = () => {
                         </Box>
                     </GridItem>
                     <GridItem w="100%" display="flex" alignItems="center" justifyContent="flex-start" flexDir="column" colSpan={[12, 12, 6, 7]}>
-                        <Box textAlign="center" w="100%" h="55vh" p="0rem 2rem" display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
-                            <Box w="100%" h="90%" display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
+                        <Box p={["0rem 0rem", "0rem 0rem", "0rem 0rem 0rem 2rem", "0rem 0rem 0rem 2rem"]} textAlign="center" w="100%" h={["40vh", "40vh", "55vh", "55vh"]} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
+                            <Box w="100%" h={["80%", "80%", "90%", "90%"]} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
                                 <motion.div
                                     key={currentItem ? currentItem.name : "empty"}
                                     initial={{ y: 160, opacity: 0 }}
@@ -133,15 +133,15 @@ const Nosotros = () => {
                                     exit={{ y: -10, opacity: 0 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <Text color="brand.primary.800" fontSize={["md", "md", "lg", "lg"]} >
+                                    <Text color="brand.primary.800" fontSize={["md", "md", "md", "lg"]} >
                                         {currentItem.desc}
                                     </Text>
-                                    <Heading pt="1rem" color="brand.primary.800" fontSize={["md", "md", "lg", "2xl"]} >
+                                    <Heading pt="1rem" color="brand.primary.800" fontSize={["md", "xl", "lg", "2xl"]} >
                                         {currentItem.name}
                                     </Heading>
                                 </motion.div>
                             </Box>
-                            <Box w="100%" h="10%" display="flex" alignItems="center" justifyContent="flex-end">
+                            <Box w="100%" h={["20%", "20%", "10%", "10%"]} display="flex" alignItems="center" justifyContent="flex-end">
                                 <Box onClick={() => handlePrevIndex()} mr="0.5rem" w="30px" h="30px" display="flex" alignItems="center" justifyContent="center" borderRadius="25rem" boxShadow="2xl" bg="brand.primary.500" color="white">
                                     <ChevronLeftIcon fontSize={["md", "md", "lg", "lg"]} />
                                 </Box>
