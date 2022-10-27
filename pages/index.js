@@ -10,7 +10,7 @@ import WhyUs from '../src/components/WhyUs';
 
 export default function Home({dictionary}) {
   return (
-    <Box w="100%" h="100vh" zIndex={0} >
+    <Box w="100%" h="90vh" zIndex={0} >
       <Image
         src={bg}
         alt={bg}

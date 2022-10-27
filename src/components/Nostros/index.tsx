@@ -24,27 +24,27 @@ const Nosotros = () => {
         {
             name: "Félix Rodríguez 1, director en RODICA",
             img: bg,
-            desc: "“Sofía es un seguro integral que nos permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica”"
+            desc: "“Sofía es un seguro integral que nos 1 permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica”"
         },
         {
             name: "Félix Rodríguez 2, director en RODICA",
             img: bg,
-            desc: "“Sofía es un seguro integral que nos permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica.”"
+            desc: "“Sofía es un seguro integral que nos 2 permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica.”"
         },
         {
             name: "Félix Rodríguez 3, director en RODICA",
             img: bg,
-            desc: "“Sofía es un seguro integral que nos permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica.”"
+            desc: "“Sofía es un seguro integral que nos 3 permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica.”"
         },
         {
             name: "Félix Rodríguez 4, director en RODICA",
             img: bg,
-            desc: "“Sofía es un seguro integral que nos permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica.”"
+            desc: "“Sofía es un seguro integral que nos 4 permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica.”"
         },
         {
             name: "Félix Rodríguez 5, director en RODICA",
             img: bg,
-            desc: "“Sofía es un seguro integral que nos permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica.”"
+            desc: "“Sofía es un seguro integral que nos 5 permite atender situaciones menores y mayores. Sin caer en procesos engorrosos ni en demoras para conseguir la atención médica.”"
         }
     ];
 
@@ -86,15 +86,14 @@ const Nosotros = () => {
                     Lo que dicen nuestr@s Soci@s
                 </Heading>
             </Box>
-            <Box pt="3rem" w="100%">
+            <Box pt="5rem" w="100%">
                 <Grid w="100%" templateColumns='repeat(12, 2fr)'>
                     <GridItem w="100%" display="flex" alignItems="center" justifyContent="flex-start" flexDir="row" colSpan={[12, 12, 6, 5]}>
                         <Box w="100%" h="100%">
                             <motion.div
                                 key={currentItem ? currentItem.name : "empty"}
-                                initial={{ x: -300, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                exit={{ x: 300, opacity: 0 }}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
                                 transition={{ duration: 0.5 }}
                             >
                                 <Box
@@ -127,15 +126,21 @@ const Nosotros = () => {
                         <Box p={["0rem 0rem", "0rem 0rem", "0rem 0rem 0rem 2rem", "0rem 0rem 0rem 2rem"]} textAlign="center" w="100%" h={["40vh", "40vh", "55vh", "55vh"]} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
                             <Box w="100%" h={["80%", "80%", "90%", "90%"]} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
                                 <motion.div
-                                    key={currentItem ? currentItem.name : "empty"}
-                                    initial={{ y: 160, opacity: 0 }}
-                                    animate={{ y: 0, opacity: 1 }}
-                                    exit={{ y: -10, opacity: 0 }}
-                                    transition={{ duration: 0.5 }}
+                                    key={currentItem ? currentItem.desc : "empty"}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5, delay: .2 }}
                                 >
                                     <Text color="brand.primary.800" fontSize={["md", "md", "md", "lg"]} >
                                         {currentItem.desc}
                                     </Text>
+                                </motion.div>
+                                <motion.div
+                                    key={currentItem ? currentItem.name : "empty"}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5, delay: .2 }}
+                                >
                                     <Heading pt="1rem" color="brand.primary.800" fontSize={["md", "xl", "lg", "2xl"]} >
                                         {currentItem.name}
                                     </Heading>
