@@ -1,7 +1,9 @@
 import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/700.css'
 
-import { ChakraProvider, ScaleFade } from '@chakra-ui/react'
+import 'swiper/css';
+
+import { ChakraProvider } from '@chakra-ui/react'
 import Layout from '../src/container/Layout'
 import theme from '../src/theme'
 import Meta from '../src/utils/Meta'

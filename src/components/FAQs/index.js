@@ -3,15 +3,12 @@ import { ALL_FAQS } from "../../utils/data/faqs";
 
 const FAQ = () => {
     return(
-        <Box p={["8rem 4%", "8rem 4%", "8rem 4%", "8rem 14rem"]} w="100%" h="auto" bg="white" display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
+        <Box p={["8rem 4%", "8rem 4%", "8rem 4%", "8% 14rem"]} w="100%" h="auto" bg="white" display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
             <Box w="100%" h="100%" display="flex" alignItems="center" justifyContent="center" flexDir="column" >
-                <Heading color="brand.primary.800" align="center" fontSize={["5xl", "6xl", "7xl", "7rem"]} >
-                    Preguntas
+                <Heading color="brand.primary.800" align="center" fontSize={["5xl", "6xl", "7xl", "6xl"]} >
+                    Preguntas frecuentes
                 </Heading>
-                <Heading color="brand.primary.800" align="center" fontSize={["5xl", "6xl", "7xl", "7rem"]} >
-                    acerca Cápsula
-                </Heading>
-                <Text pt="1rem" color="blue.500" align="center" fontSize={["md", "lg", "xl", "xl"]} >
+                <Text pt="0.45rem" color="blue.500" align="center" fontSize={["md", "lg", "xl", "xl"]} >
                     Simple, powerful, and useful.
                 </Text>
             </Box>

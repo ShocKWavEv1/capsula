@@ -82,7 +82,8 @@ const Trayectoria = ({ dictionary }) => {
   const renderSingleCard = (item, i) => {
     return(
       <motion.div
-        whileHover={{ scale: [null, 1.05, 1.05] }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.9 }}
         transition={{ duration: 0.3 }}
       >
         <Box p="1rem" bg='white' boxShadow="xl" borderRadius="8px" display="flex" alignItems="center" justifyContent="center" flexDirection="column" key={i} >
