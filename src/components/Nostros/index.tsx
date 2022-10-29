@@ -86,7 +86,7 @@ const Nosotros = () => {
                     Lo que dicen nuestr@s Soci@s
                 </Heading>
             </Box>
-            <Box pt="5rem" w="100%">
+            <Box pt="4rem" w="100%">
                 <Grid w="100%" templateColumns='repeat(12, 2fr)'>
                     <GridItem w="100%" display="flex" alignItems="center" justifyContent="flex-start" flexDir="row" colSpan={[12, 12, 6, 5]}>
                         <Box w="100%" h="100%">

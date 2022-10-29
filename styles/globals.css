@@ -404,3 +404,19 @@ svg .svg-elem-22 {
 svg.active .svg-elem-22 {
   stroke-dashoffset: 0;
 }
+
+.article h2 {
+  font-size: 26px;
+  margin: 1rem 0rem;
+}
+
+.article p {
+  font-size: 18px;
+  margin: 1rem 0rem;
+  text-align: justify;
+}
+
+.article img {
+  position: relative;
+  width: 100%;
+}
