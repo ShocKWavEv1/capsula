@@ -58,7 +58,7 @@ function ImageContainer({ id, title, date, desc, idx, total, img, slug}) {
                 {desc}
               </Text>
             </Stack>
-            <Button onClick={() => router.push(`/trayectoria/${slug}`)} mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="5em">
+            <Button onClick={() => router.push(`/trayectoria/${slug}`)} mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="8px">
               <Text cursor="pointer" p="0rem 1rem" fontSize={["xs", "sm", "sm", "sm"]}>
                 Leer mas
               </Text>
@@ -146,7 +146,7 @@ const Trayectoria = ({ posts }) => {
               <Text fontSize={"sm"} color="brand.primary.800" >
                 {item.description}
               </Text>
-              <Button mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="5em">
+              <Button mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="8px">
                 <Text cursor="pointer" p="0rem 1rem" fontSize={["sm", "sm", "sm", "sm"]}>
                   Leer mas
                 </Text>

@@ -7,6 +7,7 @@ import FAQ from '../src/components/FAQs';
 import Footer from '../src/components/Footer';
 import Hero from '../src/components/Hero';
 import Nosotros from '../src/components/Nostros';
+import Transparency from '../src/components/Transparency';
 import WhyUs from '../src/components/WhyUs';
 import MainContext from '../src/context';
 
@@ -28,8 +29,9 @@ export default function Home({dictionary, categories}) {
       />
       <Hero dictionary={dictionary} />
       <Capsula dictionary={dictionary} />
-      <Nosotros dictionary={dictionary} />
       <WhyUs dictionary={dictionary} />
+      <Transparency dictionary={dictionary} />
+      <Nosotros dictionary={dictionary} />
       <FAQ dictionary={dictionary} />
       <Footer dictionary={dictionary} />
     </Box>

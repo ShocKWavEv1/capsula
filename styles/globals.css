@@ -432,3 +432,10 @@ svg.active .svg-elem-22 {
   transform-origin: 0%;
   z-index: 4;
 }
+
+.box {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #1636FF;
+}
