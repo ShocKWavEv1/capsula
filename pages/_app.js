@@ -9,7 +9,8 @@ import theme from '../src/theme'
 import Meta from '../src/utils/Meta'
 import '../styles/globals.css'
 import { motion } from 'framer-motion';
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import MainContext from '../src/context';
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
@@ -18,6 +19,7 @@ const variants = {
 }
 
 function MyApp({ Component, pageProps, router }) {
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         let cursor = {
@@ -146,27 +148,33 @@ function MyApp({ Component, pageProps, router }) {
     };
     
     cursor.init();
-    }, [])
+    }, []);
+
+    const handleCategories = (cat) => {
+        setCategories(cat);
+    }
 
     return (
-        <ChakraProvider theme={theme}>
-        <Meta title={"CÁPSULA | Sabemos que juntos llegaremos lejos"} />
-        <Layout>
-            <motion.main
-            key={router.route}
-            variants={variants} // Pass the variant object into Framer Motion 
-            initial="hidden" // Set the initial state to variants.hidden
-            animate="enter" // Animated state to variants.enter
-            exit="exit" // Exit state (used later) to variants.exit
-            transition={{ type: 'linear' }} // Set the transition to linear
-            className=""
-            >
-                <Component {...pageProps}  />
-            </motion.main>
-        </Layout>     
-        <div className="cursor-dot-outline"></div>
-        <div className="cursor-dot"></div>   
-        </ChakraProvider>
+        <MainContext.Provider value={{ categories, handleCategories }} >
+            <ChakraProvider theme={theme}>
+                <Meta title={"CÁPSULA | Sabemos que juntos llegaremos lejos"} />
+                <Layout>
+                    <motion.main
+                    key={router.route}
+                    variants={variants} // Pass the variant object into Framer Motion 
+                    initial="hidden" // Set the initial state to variants.hidden
+                    animate="enter" // Animated state to variants.enter
+                    exit="exit" // Exit state (used later) to variants.exit
+                    transition={{ type: 'linear' }} // Set the transition to linear
+                    className=""
+                    >
+                        <Component {...pageProps}  />
+                    </motion.main>
+                </Layout>     
+                <div className="cursor-dot-outline"></div>
+                <div className="cursor-dot"></div>   
+            </ChakraProvider>
+        </MainContext.Provider>
     )
 }
 

@@ -18,6 +18,19 @@ export default {
       },
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+      options: {
+        maxLength: 150,
+      },
+    },
+    {
+      name: 'date',
+      title: 'Date',
+      type: 'string',
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',

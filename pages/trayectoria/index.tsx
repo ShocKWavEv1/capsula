@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useScroll,
@@ -9,42 +9,41 @@ import {
 import { Box, Button, Heading, Show, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Footer from '../../src/components/Footer';
 
-import {PROYECTOS} from './proyectos.js';
+import imageUrlBuilder from "@sanity/image-url";
+import { useRouter } from "next/router";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-function ImageContainer({ id, title, date, desc, idx, total, img}) {
+function ImageContainer({ id, title, date, desc, idx, total, img, slug}) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
+
+  const router = useRouter();
 
   return (
     <section>
       <SimpleGrid columns={[1, 1, 1, 2]} w="100%" mt="3rem" bg="white" >
         <Box ref={ref} bg="white">
-          <Box
-            w='100%'
-            h='550px'
-            borderTopRadius='lg'
-            boxShadow="2xl"
-            p='1rem'
-            pos='relative'
-            bgImage={`url(${img.src})`}
-            bgSize='cover'
-            _before={{
-              content: '""',
-              bgColor: `brand.primary.800`,
-              bgSize: 'cover',
-              pos: 'absolute',
-              borderTopRadius: 'lg',
-              top: 0,
-              right: 0,
-              left: 0,
-              bottom: 0,
-              opacity: 0.5
-            }}/>
+          <motion.div
+            whileHover={{ scale: 1.0 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Box
+                w='100%'
+                h='550px'
+                borderTopRadius='lg'
+                boxShadow="2xl"
+                p='1rem'
+                pos='relative'
+                bgImage={`url(${img})`}
+                bgSize='cover'
+                onClick={() => router.push(`/trayectoria/${slug}`)}
+              />
+          </motion.div>
         </Box>
         <Box p="0rem 2rem 0rem 3rem" bg="white" display="flex" alignItems="center" justifyContent="center" flexDir="column" >
           <motion.h2 style={{ y, marginTop: "-9rem" }}>
@@ -59,7 +58,7 @@ function ImageContainer({ id, title, date, desc, idx, total, img}) {
                 {desc}
               </Text>
             </Stack>
-            <Button mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="5em">
+            <Button onClick={() => router.push(`/trayectoria/${slug}`)} mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="5em">
               <Text cursor="pointer" p="0rem 1rem" fontSize={["xs", "sm", "sm", "sm"]}>
                 Leer mas
               </Text>
@@ -71,7 +70,13 @@ function ImageContainer({ id, title, date, desc, idx, total, img}) {
   );
 }
 
-const Trayectoria = ({ dictionary }) => {
+const Trayectoria = ({ posts }) => {
+  const [mappedPosts, setMappedPosts] = useState([]);
+
+  const router = useRouter();
+
+  console.log(posts)
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -79,12 +84,33 @@ const Trayectoria = ({ dictionary }) => {
     restDelta: 0.001
   });
 
+  useEffect(() => {
+    if(posts.length) {
+      const imgBuilder = imageUrlBuilder({
+        projectId: "jtkuuwmj",
+        dataset: "production"
+      });
+
+      setMappedPosts(
+        posts.map(post => {
+          return {
+            ...post,
+            mainImage: imgBuilder.image(post.mainImage)
+          }
+        })
+      )
+    } else {
+      setMappedPosts([]);
+    }
+  }, [posts])
+
   const renderSingleCard = (item, i) => {
     return(
       <motion.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.9 }}
         transition={{ duration: 0.3 }}
+        onClick={() => router.push(`/trayectoria/${item.slug.current}`)}
       >
         <Box p="1rem" bg='white' boxShadow="xl" borderRadius="8px" display="flex" alignItems="center" justifyContent="center" flexDirection="column" key={i} >
           <Box
@@ -94,7 +120,7 @@ const Trayectoria = ({ dictionary }) => {
             boxShadow="2xl"
             p='1rem'
             pos='relative'
-            bgImage={`url(${item?.img.src})`}
+            bgImage={`url(${item.mainImage})`}
             bgSize='cover'
             _before={{
               content: '""',
@@ -118,7 +144,7 @@ const Trayectoria = ({ dictionary }) => {
                 {item.title}
               </Heading>
               <Text fontSize={"sm"} color="brand.primary.800" >
-                {item.desc}
+                {item.description}
               </Text>
               <Button mt="1rem" colorScheme='brand.primary' color="white" size="md" shadow="lg" borderRadius="5em">
                 <Text cursor="pointer" p="0rem 1rem" fontSize={["sm", "sm", "sm", "sm"]}>
@@ -135,14 +161,24 @@ const Trayectoria = ({ dictionary }) => {
   return (
     <Box bg="white" padding={["0 4% 5% 4%", "0 4% 5% 4%", "0 4% 2% 4%", "0% 4% 2% 4%"]}>
       <Show above="lg" >
-        {PROYECTOS.map((item, i) => (
-          <ImageContainer key={i} id={i} title={item.title} date={item.date} desc={item.desc} idx={i} total={PROYECTOS.length} img={item.img} />
+        {mappedPosts.map((item, i) => (
+          <ImageContainer 
+            key={i} 
+            id={i} 
+            title={item.title} 
+            date={item.date} 
+            slug={item.slug.current}
+            desc={item.description} 
+            idx={i} 
+            total={posts.length} 
+            img={item.mainImage} 
+          />
         ))}
         <motion.div className="progress" style={{ scaleX }} />
       </Show>
       <Show below="lg" >
         <SimpleGrid p={"6rem 0rem 2rem 0rem"} columns={[1, 1, 2, 2]} spacing='20px'>
-          {PROYECTOS.map((item, i) => (
+          {mappedPosts.map((item, i) => (
             renderSingleCard(item, i)
           ))}
         </SimpleGrid>
@@ -153,11 +189,29 @@ const Trayectoria = ({ dictionary }) => {
 
 export default Trayectoria;
 
-export async function getStaticProps({locale}) {
-  const response = await import(`../../lang/${locale}.json`);
-  return {
-    props: {
-      dictionary: response.default
+export const getServerSideProps = async pageContext => {
+  const pageSlug = pageContext.query;
+
+  const query = encodeURIComponent(`*[ _type == "post" ]`);
+
+  console.log(pageSlug.cat);
+
+
+  const url = `https://jtkuuwmj.api.sanity.io/v1/data/query/production?query=${query}`
+
+  const result = await fetch(url).then((res) => res.json());
+
+  if(!result.result || !result.result.length) {
+    return {
+      props: {
+        posts: []
+      }
+    }
+  } else {
+    return {
+      props: {
+        posts: result.result
+      }
     }
   }
 }

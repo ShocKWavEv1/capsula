@@ -52,17 +52,10 @@ const Nosotros = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        console.log(currentItem);
-    }, [currentItem])
-
-    useEffect(() => {
-        console.log(currentIndex);
         if(currentIndex >= NOSOTROS.length) {
-            console.log("se paso")
             setCurrentIndex(0);
             setCurrent(NOSOTROS[0]);
         } else {
-            console.log("dale");
             setCurrent(NOSOTROS[currentIndex]);
         }
     }, [currentIndex]);

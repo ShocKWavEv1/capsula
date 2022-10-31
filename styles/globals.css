@@ -419,4 +419,16 @@ svg.active .svg-elem-22 {
 .article img {
   position: relative;
   width: 100%;
+  object-fit: cover;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #1636FF;
+  transform-origin: 0%;
+  z-index: 4;
 }

@@ -2,9 +2,14 @@ import { Box, Heading } from "@chakra-ui/react"
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import { useEffect, useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import { ChevronLeftIcon } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
 
 const Post = ({ title, body, image }) => {
     const [imageUrl, setImageUrl] = useState("");
+    const { scrollYProgress } = useScroll();
+    const router = useRouter();
 
     useEffect(() => {
         const imgBuilder = imageUrlBuilder({
@@ -33,10 +38,27 @@ const Post = ({ title, body, image }) => {
 
     return(
         <Box w="100%" h="auto" bg="white" display="flex" alignItems="center" justifyContent="flex-start" flexDirection="column" >
+            <motion.div
+                className="progress-bar"
+                style={{ scaleX: scrollYProgress }}
+            />
             <Box w="100%" padding={["7rem 4%", "7rem 4%", "7rem 4%", "8rem 14rem"]} >
                 <Box w="100%" h="auto">
+                    <motion.div
+                        whileHover={{ y: 0 }}
+                        whileTap={{ scale: .9 }}
+                        transition={{ duration: 0.3 }}
+                        onClick={() => router.push(`/trayectoria`)}
+                    >
+                        <Box pb="1rem" ml="-10px" w="100%" display="flex" alignItems="center" justifyContent="flex-start" flexDirection="row" >
+                            <ChevronLeftIcon color="brand.primary.800" fontSize={["2xl", "2xl", "4xl", "4xl"]} />
+                            <Heading color="brand.primary.800" fontSize={["xl", "xl", "2xl", "2xl"]} >
+                                Regresar
+                            </Heading>
+                        </Box>
+                    </motion.div>
                     {renderMainImage()}
-                    <Box pt="2rem">
+                    <Box pt="3rem">
                         <Heading color="brand.primary.800" fontSize={["5xl", "5xl", "6xl", "6xl"]} >
                             {title}
                         </Heading>
@@ -69,8 +91,6 @@ export const getServerSideProps = async pageContext => {
 
     const post = result.result[0];
 
-    console.log(result)
-
     if(!post) {
         return {
             props: {
@@ -86,5 +106,4 @@ export const getServerSideProps = async pageContext => {
             }
         }
     }
-
 }
