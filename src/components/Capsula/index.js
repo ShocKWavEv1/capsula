@@ -15,16 +15,6 @@ const Capsula = () => {
         {
             title: "nos obsesiona la calidad"
         },
-        {
-            title: "nos involucramos contigo",
-            desc: "Entendemos el contexto, audiencia, necesidades y retos del proyecto. Nos informamos."
-        },
-        {
-            title: "amamos los retos"
-        },
-        {
-            title: "nos obsesiona la calidad"
-        },
     ]
 
     const ref = useRef(null);
