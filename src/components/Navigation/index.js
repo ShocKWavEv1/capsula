@@ -67,7 +67,7 @@ const Navigation = () => {
             <Menu isLazy>
                 <MenuButton>
                     <Text color="white" cursor="pointer" fontSize={["xs", "sm", "sm", "md"]} _hover={{ opacity: 0.7 }}>
-                        Transparencia 
+                        Trayectoria 
                         <ChevronDownIcon fontSize={["lg", "lg", "xl", "2xl"]} />
                     </Text>
                 </MenuButton>

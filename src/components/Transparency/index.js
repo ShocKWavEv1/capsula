@@ -31,7 +31,7 @@ const Transparency = () => {
                 </GridItem>
                 <GridItem w="100%" display="flex" alignItems="flex-start" justifyContent="center" flexDir="column" colSpan={[12, 12, 12, 6]} h='100%'>
                     <Heading color="brand.primary.800" fontSize={["5xl", "5xl", "6xl", "6xl"]} >
-                        ¿Cómo funciona y quién lo usa?
+                        ¿Porqué donar con cápsula?
                     </Heading>
                     <Text pt="1rem" color="brand.primary.800" fontSize={["md", "md", "xl", "xl"]}>
                         Permite publicar compromisos como administrador hacia los usuarios para facilitar el diálogo y monitorear el progreso de la propuesta / compromiso.

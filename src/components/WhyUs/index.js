@@ -9,7 +9,7 @@ const WhyUs = () => {
             <Grid w="100%" h="auto" templateColumns='repeat(12, 2fr)'>
                 <GridItem w="100%" display="flex" alignItems="flex-start" justifyContent="center" flexDir="column" colSpan={[12, 12, 12, 6]}>
                     <Heading color="brand.primary.800" fontSize={["5xl", "5xl", "6xl", "6xl"]} >
-                        Review Together, Ship Faster
+                        ¿Qué es cápsula?
                     </Heading>
                     <Text pt="1rem" color="brand.primary.800" fontSize={["md", "md", "xl", "xl"]}>
                         Review with fewer fumbled threads by commenting directly on components, layouts, and copy in real time, without creating tickets or leaving the browser. High-performance teams iterate faster.

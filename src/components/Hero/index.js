@@ -26,13 +26,6 @@ const Hero = ({dictionary}) => {
         }
     };
 
-    const handleReplay = () => {
-        setReplay(!replay);
-        setTimeout(() => {
-          setReplay(true);
-        }, 600);
-    };
-
     return(
         <Box padding={["7rem 4%", "7rem 4%", "7rem 4%", "8rem 4% 0rem 4%"]} w="100%" h={["90vh", "90vh", "90vh", "85vh"]} position="relative" zIndex={1} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
             <Box w="100%" h="100%" display="flex" alignItems="center" justifyContent="center" flexDir="column" >

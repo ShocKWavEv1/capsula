@@ -76,7 +76,7 @@ const Nosotros = () => {
         <Box w="100%" h="auto" bg="white" padding={["7rem 4%", "7rem 4%", "7rem 4%", "8rem 4%"]} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
             <Box textAlign="center" w="100%" h="auto" display="flex" alignItems="flex-start" justifyContent="center">
                 <Heading color="brand.primary.800" fontSize={["5xl", "5xl", "6xl", "6xl"]} >
-                    Lo que dicen nuestr@s Soci@s
+                    conoce al equipo
                 </Heading>
             </Box>
             <Box pt="4rem" w="100%">
