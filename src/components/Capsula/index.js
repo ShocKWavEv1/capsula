@@ -15,6 +15,16 @@ const Capsula = () => {
         {
             title: "nos obsesiona la calidad"
         },
+        {
+            title: "nos involucramos contigo",
+            desc: "Entendemos el contexto, audiencia, necesidades y retos del proyecto. Nos informamos."
+        },
+        {
+            title: "amamos los retos"
+        },
+        {
+            title: "nos obsesiona la calidad"
+        },
     ]
 
     const ref = useRef(null);
@@ -31,7 +41,7 @@ const Capsula = () => {
                 </Text>
             </Box>
             <Box mt="3rem" w="100%">
-                <SimpleGrid columns={[1, 2, 2, 3]} spacingX="20px" spacingY="60px" >
+                <SimpleGrid columns={[1, 2, 2, 3]} spacingX="20px" spacingY="20px" >
                     {
                         NOSOTROS.map((item, i) => {
                             return(

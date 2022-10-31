@@ -10,7 +10,7 @@ const Hero = ({dictionary}) => {
     const placeholderText = [
         { 
             type: "heading1", 
-            text: "Send payment requests, get paid fast!" 
+            text: "Junto a líderes con soluciones innovadoras" 
         },
         /*{
           type: "heading2",
