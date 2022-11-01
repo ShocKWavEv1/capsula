@@ -18,7 +18,7 @@ const Capsula = () => {
     ]
 
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false });
+    const isInView = useInView(ref, { once: true });
 
     return(
         <Box w="100%" h="auto" bg="linear-gradient(to bottom, #fafafa, #ffffff)" padding={["7rem 4% 0rem 4%", "7rem 4% 0rem 4%", "7rem 4% 0rem 4%", "8rem 4% 4rem 4%"]} display="flex" alignItems="center" justifyContent="center" flexDirection="column" >
@@ -35,7 +35,10 @@ const Capsula = () => {
                     {
                         NOSOTROS.map((item, i) => {
                             return(
-                                <ScaleFade key={i} initialScale={0} in>
+                                <Box 
+                                    key={i} 
+                                    ref={ref}
+                                >
                                     <Box p="2rem" w="100%" bg="#fafafa" border="1px solid #ccc" borderRadius="8px" display="flex" alignItems="flex-start" justifyContent="center" flexDirection="column">
                                         <Box
                                             w='100px'
@@ -43,15 +46,37 @@ const Capsula = () => {
                                             ml="-30px"
                                             bgImage={`url(${bg.src})`}
                                             bgSize='cover'
+                                            style={{
+                                                transform: isInView ? "none" : "translateY(20px)",
+                                                opacity: isInView ? 1 : 0,
+                                                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                                            }}
                                         />
-                                        <Heading pt="0rem" color="brand.primary.800" fontSize={["lg", "lg", "xl", "2xl"]} >
+                                        <Heading 
+                                            pt="0rem" 
+                                            color="brand.primary.800" 
+                                            fontSize={["lg", "lg", "xl", "2xl"]}                                     
+                                            style={{
+                                                transform: isInView ? "none" : "translateY(20px)",
+                                                opacity: isInView ? 1 : 0,
+                                                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                                            }} 
+                                        >
                                             {item.title}
                                         </Heading>
-                                        <Text pt="1rem" color="brand.primary.800">
+                                        <Text 
+                                            pt="1rem" 
+                                            color="brand.primary.800"                                     
+                                            style={{
+                                                transform: isInView ? "none" : "translateY(20px)",
+                                                opacity: isInView ? 1 : 0,
+                                                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                                            }}
+                                        >
                                             Entendemos el contexto, audiencia, necesidades y retos del proyecto. Nos informamos.
                                         </Text>
                                     </Box>
-                                </ScaleFade>
+                                </Box>
                             )
                         })
                     }

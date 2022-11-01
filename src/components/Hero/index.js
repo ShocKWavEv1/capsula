@@ -48,7 +48,7 @@ const Hero = ({dictionary}) => {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5, delay: 1.5 }}
                         >
-                            <Text pt="1rem" color="white" align="left" fontSize={["md", "lg", "lg", "lg"]} wordBreak="break-all" >
+                            <Text pt=".45rem" color="white" align="left" fontSize={["md", "lg", "lg", "lg"]} wordBreak="break-all" >
                                 Plink works with Mollie. Your customer can complete the payment requests using all major payment methods, like creditcard or iDEAL.
                             </Text>
                         </motion.div>
@@ -58,7 +58,7 @@ const Hero = ({dictionary}) => {
                             transition={{ duration: 0.5, delay: 2 }}
                         >
                             <Box pt="1rem">
-                                <Button size="lg" shadow="2xl" borderRadius="5em">
+                                <Button shadow="2xl" p="1.45rem 2.45rem" borderRadius="8px">
                                     <Text cursor="pointer" fontSize={["xs", "sm", "sm", "md"]}>
                                         Donaciones
                                     </Text>

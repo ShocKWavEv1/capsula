@@ -433,9 +433,42 @@ svg.active .svg-elem-22 {
   z-index: 4;
 }
 
-.box {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: #1636FF;
+.feature-grads {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  filter: blur(100px);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.feat-1 {
+  width: 700px;
+    height: 700px;
+    z-index: -2;
+    left: 60%;
+    top: 40%;
+    mix-blend-mode: lighten;
+    -webkit-animation-duration: 11s;
+    animation-duration: 11s;
+    -webkit-animation-name: feat-1;
+    animation-name: feat-1;
+}
+
+.features_gradient__yjWsU {
+  position: absolute;
+  border-radius: 100%;
+  background: #ff0080;
+  opacity: 0.2;
+  mix-blend-mode: screen;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(.1,0,.9,1);
+  animation-timing-function: cubic-bezier(.1,0,.9,1);
 }

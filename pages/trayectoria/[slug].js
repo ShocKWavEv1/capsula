@@ -46,7 +46,7 @@ const Post = ({ title, body, image }) => {
                 <Box w="100%" h="auto">
                     <motion.div
                         whileHover={{ y: 0 }}
-                        whileTap={{ scale: .9 }}
+                        whileTap={{ scale: 1 }}
                         transition={{ duration: 0.3 }}
                         onClick={() => router.push(`/trayectoria`)}
                     >

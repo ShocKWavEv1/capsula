@@ -1,9 +1,12 @@
 import { Box, Button, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import bg from "../../../assets/bg/uuunion-4.svg";
-import { RiPlayCircleLine } from "react-icons/ri";
+import { useRef } from "react";
 
 const Transparency = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     return(
         <Box w="100%" h="auto" bg="white" padding={["7rem 4%", "7rem 4%", "7rem 4%", "7rem 4%"]}>
             <Grid w="100%" h="auto" templateColumns='repeat(12, 2fr)'>
@@ -30,17 +33,26 @@ const Transparency = () => {
                     </motion.div>
                 </GridItem>
                 <GridItem w="100%" display="flex" alignItems="flex-start" justifyContent="center" flexDir="column" colSpan={[12, 12, 12, 6]} h='100%'>
-                    <Heading color="brand.primary.800" fontSize={["5xl", "5xl", "6xl", "6xl"]} >
-                        ¿Porqué donar con cápsula?
-                    </Heading>
-                    <Text pt="1rem" color="brand.primary.800" fontSize={["md", "md", "xl", "xl"]}>
-                        Permite publicar compromisos como administrador hacia los usuarios para facilitar el diálogo y monitorear el progreso de la propuesta / compromiso.
-                    </Text>
-                    <Button mt="1rem" colorScheme='brand.primary' color="white" p="1.45rem 2.45rem" shadow="lg" borderRadius="8px">
-                        <Text cursor="pointer" fontSize={["xs", "sm", "sm", "md"]}>
-                            Ir a transparencia
+                    <Box
+                        ref={ref}
+                        style={{
+                            transform: isInView ? "none" : "translateY(200px)",
+                            opacity: isInView ? 1 : 0,
+                            transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                        }}
+                    >
+                        <Heading color="brand.primary.800" fontSize={["5xl", "5xl", "6xl", "6xl"]} >
+                            ¿Porqué donar con cápsula?
+                        </Heading>
+                        <Text pt="1rem" color="brand.primary.800" fontSize={["md", "md", "xl", "xl"]}>
+                            Permite publicar compromisos como administrador hacia los usuarios para facilitar el diálogo y monitorear el progreso de la propuesta / compromiso.
                         </Text>
-                    </Button>
+                        <Button mt="1rem" colorScheme='brand.primary' color="white" p="1.45rem 2.45rem" shadow="lg" borderRadius="8px">
+                            <Text cursor="pointer" fontSize={["xs", "sm", "sm", "md"]}>
+                                Ir a transparencia
+                            </Text>
+                        </Button>
+                    </Box>
                 </GridItem>
             </Grid>
         </Box>
