@@ -163,7 +163,7 @@ const Navigation = () => {
                                     Transparencia 
                                 </Text>
                             </motion.div>
-                            <Button size="sm" shadow="2xl" borderRadius="5em">
+                            <Button shadow="2xl" p="1rem" borderRadius="8px">
                                 <Text cursor="pointer" fontSize={["xs", "sm", "sm", "md"]}>
                                     Donaciones
                                 </Text>
